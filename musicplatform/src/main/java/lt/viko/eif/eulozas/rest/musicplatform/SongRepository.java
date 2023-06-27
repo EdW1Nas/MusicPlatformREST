@@ -52,9 +52,9 @@ public class SongRepository {
 
         List<Document> songDocuments = songCollection.find(Filters.eq("name", name)).into(new ArrayList<>());
         for (Document songDocument : songDocuments) {
-            ObjectId id = songDocument.getObjectId("_id"); // Retrieve the automatically generated _id as ObjectId
+            ObjectId id = songDocument.getObjectId("_id");
             Song song = new Song(
-                    id.toString(), // Convert ObjectId to string if necessary
+                    id.toString(),
                     songDocument.getString("name"),
                     songDocument.getString("artist"),
                     songDocument.getInteger("releaseYear"),
@@ -73,9 +73,9 @@ public class SongRepository {
 
         List<Document> songDocuments = songCollection.find(Filters.eq("artist", artist)).into(new ArrayList<>());
         for (Document songDocument : songDocuments) {
-            ObjectId id = songDocument.getObjectId("_id"); // Retrieve the automatically generated _id as ObjectId
+            ObjectId id = songDocument.getObjectId("_id");
             Song song = new Song(
-                    id.toString(), // Convert ObjectId to string if necessary
+                    id.toString(),
                     songDocument.getString("name"),
                     songDocument.getString("artist"),
                     songDocument.getInteger("releaseYear"),
@@ -93,9 +93,9 @@ public class SongRepository {
 
         List<Document> songDocuments = songCollection.find().into(new ArrayList<>());
         for (Document songDocument : songDocuments) {
-            ObjectId id = songDocument.getObjectId("_id"); // Retrieve the automatically generated _id as ObjectId
+            ObjectId id = songDocument.getObjectId("_id");
             Song song = new Song(
-                    id.toString(), // Convert ObjectId to string if necessary
+                    id.toString(),
                     songDocument.getString("name"),
                     songDocument.getString("artist"),
                     songDocument.getInteger("releaseYear"),
